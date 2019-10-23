@@ -1,0 +1,3 @@
+module apps.mySolar
+MySolarApp 1.0 MySolarApp.qml
+MySolarTile 1.0 MySolarTile.qml
