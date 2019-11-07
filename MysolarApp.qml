@@ -1,4 +1,4 @@
-import QtQuick 1.1
+import QtQuick 2.1
 import qb.components 1.0
 import qb.base 1.0
 import FileIO 1.0
@@ -21,7 +21,7 @@ App {
 	property url tileUrl1 : "MysolarTile1.qml";
 	property url tileUrl2 : "MysolarTile2.qml";
 	property url tileUrl3 : "MysolarTile3.qml";
-	property url thumbnailIcon: "./drawables/fp4all_thumbnail.png";
+	property url thumbnailIcon: "qrc:/tsc/fp4all_thumbnail.png";
 	property 		MysolarConfig mySolarConfig
 	property url mySolarConfigUrl : "MysolarConfig.qml"
 	property url trayUrl: "MysolarTray.qml"
@@ -142,22 +142,22 @@ App {
 	
 	FileIO {
 		id: userSettingsFile
-		source: "file:///HCBv2/qml/apps/mysolar/userSettings.json"
+		source: "file:///mnt/data/tsc/mysolar.userSettings.json"
 	}
 	
 	FileIO {
 		id: latestStatus1File
-		source: "file:///HCBv2/qml/apps/mysolar/mySolarStatus1.json"
+		source: "file:///mnt/data/tsc/mySolarStatus1.json"
 	}
 	
 	FileIO {
 		id: latestStatus2File
-		source: "file:///HCBv2/qml/apps/mysolar/mySolarStatus2.json"
+		source: "file:///mnt/data/tsc/mySolarStatus2.json"
 	}
 	
 	FileIO {
 		id: latestStatus3File
-		source: "file:///HCBv2/qml/apps/mysolar/mySolarStatus3.json"
+		source: "file:///mnt/data/tsc/mySolarStatus3.json"
 	}
 	
 	function savemySolarSettingsJson() {
@@ -184,7 +184,7 @@ App {
 			"OfflineUpdate" : offlineUpdateInterval};
 
    		var doc2 = new XMLHttpRequest();
-		doc2.open("PUT", "file:///HCBv2/qml/apps/mysolar/userSettings.json");
+		doc2.open("PUT", "file:///mnt/data/tsc/mysolar.userSettings.json");
    		doc2.send(JSON.stringify(mySolarSettingsJson));
 	}
 	
@@ -204,7 +204,7 @@ App {
 			"hours_total" : hoursTotal1};
 
    		var doc2 = new XMLHttpRequest();
-		doc2.open("PUT", "file:///HCBv2/qml/apps/mysolar/mySolarStatus1.json");
+		doc2.open("PUT", "file:///mnt/data/tsc/mySolarStatus1.json");
    		doc2.send(JSON.stringify(mySolarStatus1Json));
 	}
 	
@@ -224,7 +224,7 @@ App {
 			"hours_total" : hoursTotal2};
 
    		var doc2 = new XMLHttpRequest();
-		doc2.open("PUT", "file:///HCBv2/qml/apps/mysolar/mySolarStatus2.json");
+		doc2.open("PUT", "file:///mnt/data/tsc/mySolarStatus2.json");
    		doc2.send(JSON.stringify(mySolarStatus2Json));
 	}
 
@@ -244,7 +244,7 @@ App {
 			"hours_total" : hoursTotal3};
 
    		var doc2 = new XMLHttpRequest();
-		doc2.open("PUT", "file:///HCBv2/qml/apps/mysolar/mySolarStatus3.json");
+		doc2.open("PUT", "file:///mnt/data/tsc/mySolarStatus3.json");
    		doc2.send(JSON.stringify(mySolarStatus3Json));
 	}
 	

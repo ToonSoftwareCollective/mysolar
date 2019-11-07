@@ -1,2 +1,5 @@
+1.0.4
+- store settings in the folder /mnt/data/tsc
+
 Version 1.0.1
 - Initial release
