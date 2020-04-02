@@ -18,7 +18,7 @@ Tile {
 	Text {
 		id: txtActualPower1
 		text: app.actualPower1 + "W"
-		color: colors.clockTileColor
+		color: (typeof dimmableColors !== 'undefined') ? dimmableColors.clockTileColor : colors.clockTileColor
 		anchors {
 			horizontalCenter: parent.horizontalCenter
 			verticalCenter: parent.verticalCenter
@@ -31,7 +31,7 @@ Tile {
 	Text {
 		id: txtEnergyToday1
 		text: app.energyToday1.toFixed(1) + "kWh";
-		color: colors.clockTileColor
+		color: (typeof dimmableColors !== 'undefined') ? dimmableColors.clockTileColor : colors.clockTileColor
 		anchors {
 			horizontalCenter: parent.horizontalCenter
 			baseline: parent.bottom
@@ -47,7 +47,7 @@ Tile {
 		text: app.statusInverter1Str
 		color:{
 			if (!dimState) {
-				app.statusInverter1 ? colors.clockTileColor : "#cc3300"
+				app.statusInverter1 ? (typeof dimmableColors !== 'undefined') ? dimmableColors.clockTileColor : colors.clockTileColor : "#cc3300"
 			} else {
 				app.statusInverter1 ? "#dcdcdc" : "#a8a8a8"
 			}
@@ -65,7 +65,7 @@ Tile {
 	Text {
 		id: txtInverterTemp1
 		text: app.inverterTemp1 + "°C"
-		color: colors.clockTileColor
+		color: (typeof dimmableColors !== 'undefined') ? dimmableColors.clockTileColor : colors.clockTileColor
 		anchors {
 			baseline: parent.bottom
 			baselineOffset: isNxt ? -13 : -10
@@ -80,7 +80,7 @@ Tile {
 	Text {
 		id: txtInverterVolts1
 		text: app.inverterVolts1 + "V"
-		color: colors.clockTileColor
+		color: (typeof dimmableColors !== 'undefined') ? dimmableColors.clockTileColor : colors.clockTileColor
 		anchors {
 			top: txtInverterTemp1.top
 			horizontalCenter: parent.horizontalCenter
@@ -93,7 +93,7 @@ Tile {
 	Text {
 		id: txtInverterAmp1
 		text: app.inverterAmp1.toFixed(1) + "A"
-		color: colors.clockTileColor
+		color: (typeof dimmableColors !== 'undefined') ? dimmableColors.clockTileColor : colors.clockTileColor
 		anchors {
 			top: txtInverterTemp1.top
 			right: parent.right
